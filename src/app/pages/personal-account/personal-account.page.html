@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill="clear" (click)="doBack()" slot="start">
+      <ion-icon slot="icon-only" name="ios-arrow-back" color="dark"></ion-icon>
+    </ion-button>
+    <ion-title>{{ 'personalAccountPage.title' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <h1 class="item_title">{{ 'personalAccountPage.tipTitle' | translate }}</h1>
+  </ion-row>
+  <div class="item_list">
+    <div class="item">
+      <ion-label>{{ 'personalAccountPage.mail' | translate }}</ion-label>
+      <ion-input #mailInput clearInput type="mail" maxlength="50"
+        [placeholder]=" 'personalAccountPage.placeholder.mail' | translate " [(ngModel)]="mail"></ion-input>
+    </div>
+  </div>
+  <div class="btn_next">
+    <ion-button color="primary" slot="end" round (click)="doNext()">
+      {{ 'common.next' | translate }}
+    </ion-button>
+  </div>
+</ion-content>

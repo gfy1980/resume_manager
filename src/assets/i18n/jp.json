@@ -1,0 +1,177 @@
+{
+    "commonMsg": {
+        "msg001": "{{email}}<br>にメールを送信しました。メールのリンクからパスワードの再設定をしてください。",
+        "msg002": "{{param}}を入力してください。",
+        "msg003": "入力形式が正しくありません。",
+        "msg004": "サーバへの接続に失敗しました。",
+        "msg005": "カメラが使用できないです。",
+        "msg006": "サービス利用規約と個人情報ポリシーを同意するが必要です。",
+        "msg007": "WeChatをインストールしてください。",
+        "msg008": "エラーが発生しました、もう一度試してみてください。",
+        "msg009": "削除しますか？",
+        "msg010": "企業を選択してください。",
+        "msg011": "APPを終了しますか。",
+        "msg012": "アップロード成功しました。",
+        "msg013": "アカウント作成終了しますか。"
+    },
+    "common": {
+        "ok": "確定",
+        "cancel": "キャンセル",
+        "next": "次へ",
+        "over": "完了",
+        "detail": "詳細",
+        "delete": "削除",
+        "camera": "写真",
+        "folder": "ファイル",
+        "waitting": "待ってください。",
+        "pulling": "Loading",
+        "refreshing": "Refreshing...",
+        "loading": "Loading more data..."
+    },
+    "tabsPersonalPage": {
+        "home": "HOME",
+        "file": "ファイル",
+        "wallet": "wallet",
+        "settings": "設定/その他"
+    },
+    "tabsCompanyPage": {
+        "home": "HOME",
+        "search": "検索",
+        "scout": "スカウト",
+        "settings": "設定/その他"
+    },
+    "loginQuitePage": {
+        "welcome": "よこそう",
+        "login": "ログイン",
+        "other": "そのたのオプション",
+        "statute": "私は<br><a href=\"http://www.newlandsystem.com\" class=\"gray-color\">サービス利用規約</a>、<a href=\"http://www.newlandsystem.com\" class=\"gray-color\">個人情報ポリシー</a><br>に同意します。"
+    },
+    "loginPage": {
+        "title": "",
+        "placeholder": {
+            "account": "ユーザID",
+            "password": "パスワード"
+        },
+        "login": "ログイン",
+        "account": "ユーザID",
+        "password": "パスワード",
+        "forget": "ID、パスワードをお忘れの場合"
+    },
+    "forgetPage": {
+        "title": "",
+        "placeholder": {
+            "mail": "メールアドレス"
+        },
+        "question": "パスワードをお忘れですか？",
+        "tip": "パスワードを再設定するためにメールアドレスを入力ください。",
+        "mail": "メールアドレス"
+    },
+    "passwordChangeFinishPage":{
+        "title": ""
+    },
+    "otherOptionPage": {
+        "title": "",
+        "accountCreate": "アカウントを作成"
+    },
+    "accountCreatePage": {
+        "title": "",
+        "placeholder": {
+            "name": "お名前",
+            "furigana": "フリガナ"
+        },
+        "name": "お名前",
+        "furigana": "フリガナ",
+        "tipTitle": "本名を教えてください。",
+        "undertaker": "企業人事担当者"
+    },
+    "companyAccountPage": {
+        "title": "",
+        "placeholder": {
+            "companyCode": "会社コード",
+            "companyName": "会社名称",
+            "companyUrl": "会社URL",
+            "companyMail": "メールアドレス"
+        },
+        "companyCode": "会社コード",
+        "companyName": "会社名称",
+        "companyUrl": "会社URL",
+        "companyMail": "メールアドレス"
+    },
+    "personalAccountPage": {
+        "title": "",
+        "placeholder": {
+            "mail": "メールアドレス"
+        },
+        "mail": "メールアドレス",
+        "tipTitle": "メールを教えてください。"
+    },
+    "idcardPositivePage": {
+        "title": "",
+        "tipTitle": "身分証明書正面写真"
+    },
+    "idcardBackPage": {
+        "title": "",
+        "tipTitle": "身分証明書裏面写真"
+    },
+    "accountCreateFinishPage": {
+        "title": "",
+        "passwordCreate": "パスワードを作成"
+    },
+    "passwordCreatePage": {
+        "title": "",
+        "placeholder": {
+            "password": "パスワード"
+        },
+        "tipTitle": "パスワードを作成ください。",
+        "tip": "パスワードには記号か数字を含み、８文字以上のものにしてください。",
+        "password": "パスワード"
+    },
+    "pledgePage": {
+        "title": "",
+        "tipTitle": "誓約のお願い",
+        "agree": "同意",
+        "disagree": "不同意"
+    },
+    "googleRecapthaPage": {
+        "title": ""
+    },
+    "accountConfirmationFinishPage": {
+        "title": "",
+        "tipTitle": "ご対応ありがとうございます",
+        "tip": "おかげさまでアカウントの安全確認を完了しました。"
+    },
+    "homePage": {
+        "title": "",
+        "scoutsList": "スカウト一覧",
+        "tipSearch": "検索"
+    },
+    "companyInfoPage": {
+        "title": "",
+        "companyName": "企業名称",
+        "companyMessage": "企業メッセージ",
+        "apply": "申請中",
+        "permission": "許可",
+        "noPermission": "不許可",
+        "payment": "支払済"
+    },
+    "filePage": {
+        "title": "",
+        "history":"変更履歴 ",
+        "upload":"アップロード",
+        "edit":"編集",
+        "affiliation":"所属連携",
+        "sheetTitle":""
+    },
+    "fileEditPage": {
+        "title": "",
+        "project":"プロジェクト名",
+        "security": "セキュリティ"
+    },
+    "affiliationPage": {
+        "title": "",
+        "company":"企業",
+        "select":"企業選択",
+        "affiliation": "所属",
+        "tipSearch": "検索"
+    }
+}

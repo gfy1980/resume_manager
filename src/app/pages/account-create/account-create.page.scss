@@ -1,0 +1,20 @@
+.back_box{
+	height: 48px;
+	margin: 0;
+}
+
+.dsp_flex{
+	display: flex;
+	justify-content: space-between;
+	.tit_radio{
+		line-height: 32px;
+		--padding: 0;
+	}
+	.btn_radio{
+		width: 51px;
+		--padding: 0;
+		ion-toggle{
+			float: right;
+		}
+	}
+}

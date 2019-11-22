@@ -1,0 +1,31 @@
+<ion-header>
+	<ion-toolbar color="blue">
+		<ion-title>{{ 'filePage.title' | translate }}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-row class="file">
+		<ion-text color="dark">
+			<h5 class="file_tit">{{ 'filePage.history' | translate }}</h5>
+		</ion-text>
+	</ion-row>
+	<div class="list_box">
+		<div [ngClass]="{'file_info file_info_act': (isActiveId == item.id), 'file_info': (isActiveId != item.id)}" *ngFor="let item of dataList; let i = index;" (click)="onItemClick(item)">
+			<span class="file_name">{{item.name}}</span>
+			<span class="file_time"><span class="file_format">{{item.filetype}}</span>{{item.date}}</span>
+		</div>
+	</div>
+	<ion-row class="btn_file">
+		<ion-col>
+			<ion-chip outline color="primary" (click)="doUpload()">{{ 'filePage.upload' | translate }}</ion-chip>
+		</ion-col>
+		<ion-col>
+			<ion-chip outline color="success" (click)="toEdit()">{{ 'filePage.edit' | translate }}</ion-chip>
+		</ion-col>
+		<ion-col>
+			<ion-chip outline color="warning" (click)="toAffiliation()">{{ 'filePage.affiliation' | translate }}
+			</ion-chip>
+		</ion-col>
+	</ion-row>
+</ion-content>

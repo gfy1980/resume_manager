@@ -1,0 +1,21 @@
+<ion-tabs>
+	<ion-tab-bar slot="bottom">
+		<ion-tab-button tab="home">
+			<ion-icon name="home"></ion-icon>
+			<ion-label>{{ 'tabsPersonalPage.home' | translate }}</ion-label>
+		</ion-tab-button>
+		<ion-tab-button tab="file">
+			<ion-icon name="document"></ion-icon>
+			<ion-label>{{ 'tabsPersonalPage.file' | translate }}</ion-label>
+		</ion-tab-button>
+		<ion-tab-button tab="wallet">
+			<ion-icon name="wallet"></ion-icon>
+			<ion-label>{{ 'tabsPersonalPage.wallet' | translate }}</ion-label>
+		</ion-tab-button>
+		<ion-tab-button tab="settings">
+			<ion-icon name="settings"></ion-icon>
+			<ion-badge *ngIf="messageCount" color="danger">{{messageCount}}</ion-badge>
+			<ion-label>{{ 'tabsPersonalPage.settings' | translate }}</ion-label>
+		</ion-tab-button>
+	</ion-tab-bar>
+</ion-tabs>

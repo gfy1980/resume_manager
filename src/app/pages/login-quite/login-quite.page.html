@@ -1,0 +1,35 @@
+<ion-content>
+	<ion-row>
+		<div class="logo">
+			<img [src]="logoSrc">
+		</div>
+	</ion-row>
+
+	<ion-row>
+		<h1 class="welcom">{{ 'loginQuitePage.welcome' | translate }}</h1>
+	</ion-row>
+	<ion-row>
+		<ion-col class="quick_load">
+			<div class="wechat" (click)="doWechatLogin()">
+				<img [src]="wechatSrc">
+			</div>
+			<div class="facebook" (click)="doFacebookLogin()">
+				<img [src]="facebookSrc">
+			</div>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<div class="login">
+			<button round (click)="toLogin()">{{ 'loginQuitePage.login' | translate }}</button>
+		</div>
+	</ion-row>
+	<ion-row class="fixed_foot">
+		<div class="other_load">
+			<button round (click)="toOtherOption()">{{ 'loginQuitePage.other' | translate }}</button>
+		</div>
+		<div class="check">
+			<ion-checkbox class="check_icon" color="primary" checked="true"></ion-checkbox>
+			<div class="check_font" [innerHTML]=" 'loginQuitePage.statute' | translate "></div>
+		</div>
+	</ion-row>
+</ion-content>

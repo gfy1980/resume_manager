@@ -1,0 +1,93 @@
+.logo{
+    width: 60%;
+    margin: 10% auto;
+    img{
+        width:100%;
+    }
+}
+.forget{
+    text-align: center;
+    width:100%;
+    button{
+        text-decoration: underline;
+        font-size: 1.0rem;
+        color:rgb(102,102,102);
+        padding: .4rem;
+        margin: 0 auto;
+        background:#fff;
+    }
+}
+.fixed_foot{
+
+	width: 100%;
+	margin-top: -5%;
+	.other_load{
+		text-align: center;
+		width:100%;
+		button{
+			text-decoration: underline;
+			font-size: 1.0rem;
+			color:rgb(102,102,102);
+			padding: .4rem;
+			margin: 0 auto;
+			background:#fff;
+		}
+	}
+	.check{
+		width:86%;
+		margin: .8rem auto;
+		text-align: center;
+		.check_icon{
+			margin: 0 auto -26px -64px;
+		}
+		.check_font{
+			font-size: 0.875rem;
+			text-align: center;
+			line-height: 1.8rem;
+		}
+	}
+}
+.login_info{
+	margin: 0 20px;
+	.username,.password{
+		margin-bottom: 20px;
+		ion-label{
+			font-size: 1.125rem;
+		}
+        
+		ion-input{
+			border-bottom:1px solid #ddd;
+			--padding-start: 0;
+			--padding-top: 1.25rem;
+			--padding-bottom: 0.85rem;
+			font-size: 1.25rem;
+		}
+		ion-input:hover{
+			border-bottom:2px solid rgb(23,150,221);
+		}
+	}
+}
+.forget{
+	button{
+		font-size: 0.875rem;
+	}
+}
+@media screen and (max-width: 320px){
+	.logo{
+	    width: 60%;
+	    margin: 5% auto;
+	}
+	.welcom{
+		margin: 0;
+	}
+	.login_info{
+		margin: 0 20px;
+		.username,.password{
+			margin-bottom: 10px;
+			ion-input{
+				--padding-top: 0.85rem;
+				--padding-bottom: 0.85rem;
+			}
+		}
+	}
+}

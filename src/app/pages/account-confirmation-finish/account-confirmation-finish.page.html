@@ -1,0 +1,21 @@
+<ion-header>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-row>
+    <div class="ok m_lr_20">
+      <img [src]="okImageSrc">
+    </div>
+  </ion-row>
+  <ion-row class="info-row">
+    <ion-text>
+      <h5 class="tips m_lr_20">{{ 'accountConfirmationFinishPage.tipTitle' | translate }}</h5>
+      <h5 class="tips m_lr_20">{{ 'accountConfirmationFinishPage.tip' | translate }}</h5>
+    </ion-text>
+  </ion-row>
+  <div class="btn_next">
+    <ion-button color="primary" slot="end" round (click)="doNext()">
+      {{ 'common.ok' | translate }}
+    </ion-button>
+  </div>
+</ion-content>

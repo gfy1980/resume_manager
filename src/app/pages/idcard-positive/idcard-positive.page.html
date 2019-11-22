@@ -1,0 +1,27 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-button fill="clear" (click)="doBack()" slot="start">
+			<ion-icon slot="icon-only" name="ios-arrow-back" color="dark"></ion-icon>
+		</ion-button>
+		<ion-title>{{title}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-row class="idcard_push">
+		<ion-col class="item_title">
+			<h5>{{ 'idcardPositivePage.tipTitle' | translate }}</h5>
+		</ion-col>
+		<ion-button class="btn_camera" fill="clear" (click)="openCamera()">
+			<ion-icon name="camera"></ion-icon>
+		</ion-button>
+	</ion-row>
+	<div class="idcard_img">	
+		<img *ngIf="base64Img" [src]="base64Img">
+	</div>
+	<div class="btn_next">
+		<ion-button color="primary" slot="end" round (click)="doNext()">
+			{{ 'common.next' | translate }}
+		</ion-button>
+	</div>
+</ion-content>

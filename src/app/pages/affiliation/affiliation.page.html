@@ -1,0 +1,45 @@
+<ion-header>
+	<div class="top_head">
+		<button fill="clear" (click)="doBack()" slot="start" class="go_back"><ion-icon name="ios-arrow-back"></ion-icon></button>
+		<input type="text" [(ngModel)]="searchParam" placeholder="{{ 'affiliationPage.tipSearch' | translate }}" />
+		<button class="go_search" (click)="onSearchClick()"><ion-icon name="search"></ion-icon></button>
+	</div>
+</ion-header>
+
+<ion-content>
+	<ion-row class="cmp_chose">
+		<ion-col>
+			<ion-text color="dark">
+				<h5>{{ 'affiliationPage.select' | translate }}</h5>
+			</ion-text>
+		</ion-col>
+	</ion-row>
+	<div class="list_box">
+		<div [ngClass]="{'chose_list_h': (isActiveId == item.id), 'chose_list': (isActiveId != item.id)}" *ngFor="let item of dataList; let i = index;">
+			<ion-item lines="none" (click)="onItemClick(item)">
+				<!-- <ion-icon slot="start" name="people"></ion-icon> -->
+				<ion-label>{{item.name}}</ion-label>
+			</ion-item>
+		</div>
+	</div>
+	<ion-row class="box_delet">
+		<ion-col>
+			<ion-text color="dark">
+				<h5>{{ 'affiliationPage.affiliation' | translate }}</h5>
+			</ion-text>
+		</ion-col>
+		<ion-col class="btn_delet">
+			<ion-button color="danger"  (click)="onDeleteClick()">{{ 'common.delete' | translate }}</ion-button>
+		</ion-col>
+		<ion-row class="cmp_name">
+			<ion-text color="dark">
+				<h5>{{ selectName }}</h5>
+			</ion-text>
+		</ion-row>
+	</ion-row>
+	<div class="footer">
+		<button (click)="doNext()">
+			{{ 'common.over' | translate }}
+		</button>
+	</div>
+</ion-content>

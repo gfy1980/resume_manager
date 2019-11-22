@@ -1,0 +1,45 @@
+<ion-header>
+	<ion-toolbar color="blue">
+		<ion-button fill="clear" (click)="doBack()" slot="start">
+			<ion-icon slot="icon-only" name="ios-arrow-back" color="light"></ion-icon>
+		</ion-button>
+		<ion-title>{{ 'companyInfoPage.title' | translate }}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-row class="edit_tit">
+		<ion-col>
+			<ion-text color="dark">
+				<h5 class="tit_l">{{ 'fileEditPage.project' | translate }}</h5>
+			</ion-text>
+		</ion-col>
+		<ion-col>
+			<ion-text color="dark">
+				<h5 class="tit_r">{{ 'fileEditPage.security' | translate }}</h5>
+			</ion-text>
+		</ion-col>
+	</ion-row>
+	<ng-container *ngIf="dataList.length > 0">
+		<!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+			<ion-refresher-content pullingIcon="arrow-dropdown" refreshingSpinner="circles">
+			</ion-refresher-content>
+		</ion-refresher> -->
+		<div class="file_list" *ngFor="let item of dataList; let i = index;">
+			<ion-item lines="none">
+				<!-- <ion-icon slot="start" name="people"></ion-icon> -->
+				<ion-label>{{item.contents}}</ion-label>
+				<ion-toggle color="warning" mode="ios" [(ngModel)]="item.permission" (ngModelChange)="onToggleChange(item)"></ion-toggle>
+			</ion-item>
+		</div>
+		<!-- <ion-infinite-scroll threshold="10%" (ionInfinite)="loadData($event)">
+			<ion-infinite-scroll-content loadingSpinner="crescent">
+			</ion-infinite-scroll-content>
+		</ion-infinite-scroll> -->
+	</ng-container>
+	<div class="footer">
+		<button (click)="doNext()">
+			{{ 'common.over' | translate }}
+		</button>
+	</div>
+</ion-content>

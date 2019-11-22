@@ -1,0 +1,134 @@
+ion-toolbar.sc-ion-searchbar-ios-h, ion-toolbar .sc-ion-searchbar-ios-h {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 52px;
+}
+.cmp_chose{
+	margin: 0 20px 20px 20px;
+	padding: 0;
+	border-bottom: 1px solid #1795dd;
+}
+.list_box{
+	margin: 0 20px;
+	height: calc(100% - 290px);
+	overflow: hidden;
+	overflow-y: auto;
+	border: 1px solid #d7d7d7;
+	border-radius: 10px;
+	div{
+		margin: 0;
+		ion-item{
+			color: #666;
+			font-size: 1rem;
+		}
+	}
+	.chose_list_h{
+		margin: 0;
+		ion-item{
+			color: #1795dd;
+			font-size: 1rem;
+		}
+	}
+}
+.box_delet{
+	margin: 10px 20px;
+	border: 1px solid #d7d7d7;
+	border-radius: 10px;
+	padding: 0 0 10px 10px;
+	ion-col{
+		padding: 0;
+		margin: 0;
+		h5{
+			color: #999;
+			font-size: 0.875rem;
+			margin: 0;
+			padding: 12px 5px;
+		}
+		.tit_r{
+			text-align: right;
+		}
+		ion-button{
+			--ion-color-base: transparent!important;
+			--ion-color-contrast:#f00!important;
+			--box-shadow: none!important;
+			float:right;
+			font-size: 0.875rem;
+			margin: 0;
+			padding: 2px 0;
+		}
+	}
+	.cmp_name{
+		width:100%;
+		margin: 0;
+		padding: 0;
+		h5{
+			padding: 5px;
+			margin: 0;
+			color:rgb(50,50,50);
+			font-size: 0.875rem;
+		}
+	}
+}
+.top_head{
+	display: flex;
+	background:#1795dd;
+	padding: 10px 20px;
+	input{
+		width: calc(100% - 72px);
+		border-radius: 5px 0 0 5px;
+		border:0;
+		height: 36px;
+		line-height: 40px;
+		padding: 0 10px;
+		font-size: 0.875rem;
+	}
+	.go_back{
+		width: 36px;
+		height: 36px;
+		line-height: 44px;
+		background:none;
+		border-radius: 0;
+		border:0;
+		padding: 0;
+		font-size: 1.5rem;
+		color:#fff;
+		text-align: left;
+		font-size: 2rem;
+	}
+	.go_search{
+		width: 36px;
+		height: 36px;
+		line-height: 44px;
+		background:#fff;
+		border-radius: 0 5px 5px 0;
+		border-left: 1px solid #DDD;
+		padding: 0;
+		font-size: 1.5rem;
+		color:#a0a0a0;
+	}
+	.go_search:hover{
+		background:#eee;
+	}
+	.go_back:hover{
+		background:none;
+	}
+}
+.footer{
+	padding: 20px;
+	border-top:1px solid #d7d7d7;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #fff;
+	z-index: 9;
+	button{
+		margin: 0 auto;
+		padding: 15px;
+		font-size: 1.125rem;
+		color: #fff;
+		background: #1795dd;
+		border-radius:10px;
+		width:100%;
+	}
+}

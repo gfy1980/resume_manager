@@ -1,0 +1,35 @@
+.align_center{
+	text-align: center;
+	width:100%;
+}
+.other_txt{
+	font-size: 0.875rem;
+	color:#666;
+	line-height: 1.2rem;
+	margin: 0 20px;
+	text-indent: 1.6rem;
+	height: calc(100% - 150px);
+	border:1px solid #d7d7d7;
+	border-radius:10px;
+	p{
+		font-size: 0.875rem;
+		color:#787878;
+		line-height: 1rem;
+		height: 100%;
+		overflow: hidden;
+		overflow-y: auto;
+	}
+}
+.btn_next{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin: 20px 0;
+	ion-button{
+		margin: 0 10%;
+		width: 80px;
+	}
+}
+.agree_tit{
+	margin: 20px;
+}

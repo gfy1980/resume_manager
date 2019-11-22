@@ -1,0 +1,31 @@
+<ion-header>
+	<ion-toolbar color="blue">
+		<ion-button fill="clear" (click)="doBack()" slot="start">
+			<ion-icon slot="icon-only" name="ios-arrow-back" color="light"></ion-icon>
+		</ion-button>
+		<ion-title>{{ 'companyInfoPage.title' | translate }}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-item lines="none" class="tit_bar">
+		<ion-label>{{ 'companyInfoPage.companyName' | translate }}</ion-label>
+		<ion-chip outline [color]="chipColor" slot="end">
+			<ion-label [color]="chipColor">{{ statesText }}</ion-label>
+		</ion-chip>
+	</ion-item>
+	<ion-item lines="none" class="cmp_name" (click)="doShowUrl()" >
+		<ion-label>{{companyName}}</ion-label>
+		<ion-icon slot="end" name="ios-arrow-forward" color="medium"></ion-icon>
+		<div class="line"></div>
+	</ion-item>
+	<ion-item lines="none" class="agree">
+		<ion-label>{{ 'companyInfoPage.companyMessage' | translate }}</ion-label>
+		{{ 'companyInfoPage.permission' | translate }}
+		<ion-toggle color="warning" mode="ios" [(ngModel)]="permissionChecked" (ngModelChange)="onToggleChange()"></ion-toggle>
+	</ion-item>
+	<div class="cmp_txt">
+		<textarea rows="20" cols="20" readonly value="{{message}}">
+		</textarea>
+	</div>
+</ion-content>

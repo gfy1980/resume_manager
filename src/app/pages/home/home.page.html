@@ -1,0 +1,40 @@
+<ion-header>
+	<div class="top_head">
+		<input type="text" [(ngModel)]="searchParam" placeholder="{{ 'homePage.tipSearch' | translate }}" />
+		<button class="go_search" (click)="onSearchClick()"><ion-icon name="ios-arrow-forward"></ion-icon></button>
+		<!-- <button class="msg_num"><span>{{ messageCount }}</span></button> -->
+	</div>
+</ion-header>
+
+<ion-content>
+	<div class="slides" [ngClass]="divshow?'divshow':'divhide'">
+		<ion-slides pager="true" [options]="slideOpts" #slide1 (ionSlideTouchEnd)="slideDidChange()" *ngIf="bannerList.length > 0">
+			<ion-slide *ngFor="let item of bannerList">
+				<img [src]="item.url">
+			</ion-slide>
+		</ion-slides>
+	</div>
+	<ion-row>
+		<ion-text class="tit_box" color="dark">
+			<h5 class="container_tit">{{ 'homePage.scoutsList' | translate }}</h5>
+		</ion-text>
+	</ion-row>
+	<ng-container *ngIf="dataList.length > 0">
+		<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+			<ion-refresher-content pullingIcon="ios-arrow-dropdown" refreshingSpinner="circles">
+			</ion-refresher-content>
+		</ion-refresher>
+		<div class="home_list" *ngFor="let item of dataList; let i = index;">
+			<ion-item lines="none" (click)="onItemClick(item)">
+				<!-- <ion-icon slot="start" name="people"></ion-icon> -->
+				<ion-label>{{item.name}}</ion-label>
+				<div class="more">{{'common.detail' | translate}}</div>
+				<ion-icon slot="end" name="ios-arrow-forward" color="medium"></ion-icon>
+			</ion-item>
+		</div>
+		<ion-infinite-scroll threshold="10%" (ionInfinite)="loadData($event)">
+			<ion-infinite-scroll-content loadingSpinner="crescent">
+			</ion-infinite-scroll-content>
+		</ion-infinite-scroll>
+	</ng-container>
+</ion-content>

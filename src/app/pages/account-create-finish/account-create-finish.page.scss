@@ -1,0 +1,19 @@
+.quick_load{
+    padding-top: 30%;
+    display: flex;
+    justify-content: center;
+    .wechat{
+        width: 24%;
+        margin: 4% 8%;
+        img{
+            width: 100%;
+        }
+    }
+    .facebook{
+        width: 24%;
+        margin: 4% 8%;
+        img{
+            width: 100%;
+        }
+    }
+}

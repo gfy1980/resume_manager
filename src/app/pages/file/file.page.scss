@@ -1,0 +1,97 @@
+.file{
+	margin: 0px 20px;
+	ion-text{
+		width:100%;
+		.file_tit{
+			color: #1795dd;
+			padding: 10px 0;
+			text-align: left;
+			position: relative;
+			border-bottom: 1px solid #1795dd;
+			width:100%;
+			font-size: 1rem;
+		}
+	}
+}
+.file_txt{
+	padding: 0 20px;
+	ion-textarea{
+		border:1px solid #d7d7d7;
+		border-radius: 10px;
+		margin: 0;
+	}
+}
+.btn_file{
+	display: inline-flex;
+	justify-content: center;
+	width: 100%;
+	padding: 0 20px;
+	margin: 10px 0 0 0;
+	ion-col{
+		width: 30%;
+		padding: 0;
+		text-align: center;
+		margin: 0;
+		ion-chip{
+			text-align: center;
+			font-size: 12px;
+		}
+	}
+}
+.list_box{
+	margin: 0 20px;
+	height: calc(100% - 126px);
+	overflow: hidden;
+	overflow-y: auto;
+	border: 1px solid #d7d7d7;
+	border-radius: 10px;
+	.file_info{
+		padding: 10px;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		.file_name{
+			font-size: 1rem;
+			color:#454545;
+			line-height:28px;
+			max-width: calc(100% - 110px);
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+		}
+		.file_time{
+			font-size: 0.75rem;
+			color:#787878;
+			line-height:28px;
+			.file_format{
+				padding: 0 10px;
+				color:#1795dd;
+			}
+		}
+	}
+	.file_info_act{
+		padding: 10px;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		background:rgba(0,0,0,.05);
+		.file_name{
+			font-size: 1rem;
+			color:#1795dd;
+			line-height:28px;
+			max-width: calc(100% - 110px);
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+		}
+		.file_time{
+			font-size: 0.75rem;
+			color:#787878;
+			line-height:28px;
+			.file_format{
+				padding: 0 10px;
+				color:#1795dd;
+			}
+		}
+	}
+}

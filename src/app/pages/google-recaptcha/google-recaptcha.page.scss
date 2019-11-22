@@ -1,0 +1,10 @@
+.check_in{
+	width: 300px;
+	margin: 0 auto;
+	padding: 100px 0;
+	text-align: center;
+	re-captcha{
+		margin: 0 20px;
+		width: calc(100% - 40px);
+	}
+}

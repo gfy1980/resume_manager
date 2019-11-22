@@ -1,0 +1,41 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-button fill="clear" (click)="doBack()" slot="start">
+			<ion-icon slot="icon-only" name="ios-arrow-back" color="dark"></ion-icon>
+		</ion-button>
+		<ion-title>{{ 'companyAccountPage.title' | translate }}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="item_list m_top_50">
+		<div class="item">
+			<ion-label>{{ 'companyAccountPage.companyCode' | translate }}</ion-label>
+			<ion-input #companyCodeInput clearInput type="text" maxlength="50" [placeholder]=" 'companyAccountPage.placeholder.companyCode' | translate "
+			 [(ngModel)]="companyCode">
+			</ion-input>
+		</div>
+		<div class="item">
+			<ion-label>{{ 'companyAccountPage.companyName' | translate }}</ion-label>
+			<ion-input #companyNameInput clearInput type="text" maxlength="50" [placeholder]=" 'companyAccountPage.placeholder.companyName' | translate "
+			 [(ngModel)]="companyName">
+			</ion-input>
+		</div>
+		<div class="item">
+			<ion-label>{{ 'companyAccountPage.companyUrl' | translate }}</ion-label>
+			<ion-input #companyUrlInput clearInput type="text" maxlength="50" [placeholder]=" 'companyAccountPage.placeholder.companyUrl' | translate "
+			 [(ngModel)]="companyUrl"></ion-input>
+		</div>
+		<div class="item">
+			<ion-label>{{ 'companyAccountPage.companyMail' | translate }}</ion-label>
+			<ion-input #companyMailInput clearInput type="text" maxlength="50" [placeholder]=" 'companyAccountPage.placeholder.companyMail' | translate "
+			 [(ngModel)]="companyMail">
+			</ion-input>
+		</div>
+	</div>
+	<div class="btn_next">
+		<ion-button color="primary" slot="end" round (click)="doNext()">
+			{{ 'common.next' | translate }}
+		</ion-button>
+	</div>
+</ion-content>

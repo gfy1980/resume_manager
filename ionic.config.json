@@ -1,0 +1,8 @@
+{
+  "name": "dms-master",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

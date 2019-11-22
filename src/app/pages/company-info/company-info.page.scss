@@ -1,0 +1,44 @@
+.tit_bar{
+	margin: 10px 3px 0 3px;
+	ion-label{
+		line-height: 32px;
+	}
+}
+.cmp_name{
+	color: #1795dd;
+	padding: 0;
+	text-align: left;
+	position: relative;
+	margin: 0 3px;
+	.line{
+		position: absolute;
+		bottom:0;
+		left:0;
+		right: 17px;
+		border-bottom: 1px solid #1795dd;
+	}
+}
+.agree{
+	margin: 10px 3px;
+	color:rgb(50,50,50);
+	ion-toggle{
+		margin-left: 10px;
+	}
+}
+.cmp_txt{
+	height: calc(100% - 190px);
+	position: relative;
+	textarea{
+		border:1px solid #dcdcdc;
+		border-radius:10px;
+		font-size: 0.875rem;
+		color: #666;
+		height: calc(100% - 10px);
+		width: calc(100% - 40px);
+		padding: 10px;
+		margin: 0 20px;
+	}
+	.item-native{
+		height: 100%;
+	}
+}

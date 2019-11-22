@@ -1,0 +1,36 @@
+.idcard_push{
+	display: flex;
+	justify-content: space-between;
+	margin: 40px 20px 20px 20px;
+	ion-col{
+		padding: 0;
+		margin: 0;
+	}
+	.btn_camera{
+		width: 96px;
+		height: 48px;
+		margin: 0;
+		ion-icon{
+			width:1.5em;
+			height:1.5em;
+		}
+		.button-native{
+			padding: 0;
+		}
+	}
+}
+.idcard_img{
+	width: calc(100% - 42px);
+	height: calc(100% - 220px);
+	margin: 0 auto;
+	border: 1px solid #1795dd;
+	border-radius: 8px;
+	text-align: center;
+	img{
+		display: block;
+		height: 100%;
+		width: auto;
+		margin: 0 auto;
+		border-radius: 10px;
+	}
+}
