@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { TranslateService } from "@ngx-translate/core";
 import { SqliteService } from "./services/sqlite.service";
+import { CommonService } from './services/common.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -21,6 +22,7 @@ export class AppComponent {
     private router:Router,
     private alertController:AlertController,
     private sqliteService: SqliteService,
+    private commonService: CommonService,
   ) {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -55,20 +57,32 @@ export class AppComponent {
     // this.sqliteService.initDatabase();
   }
   lastTimeBackPress = 0;
-  timePeriodToExit = 2000;
+  timePeriodToExit = 800;
   backButtonEvent() {
+    window.onpopstate = function (event) {
+      return;
+    }
     this.platform.backButton.subscribe(() => {
-      if (this.router.url == '/login-quite') {
-        if (new Date().getTime() - this.lastTimeBackPress < this.timePeriodToExit) {
-          // navigator['app'].exitApp(); //退出APP
-        } else {
-          this.presentAlertConfirm();
-          this.lastTimeBackPress = new Date().getTime();//再按
-        }
-        // navigator['app'].exitApp(); //ionic4 退出APP的方法
-      }
+      this.commonService.storageGet('isAlertShow').then((value: boolean) => {
+          if (value) {
+            return;
+          }
+          if (this.router.url == '/login-quite'
+          || this.router.url == '/other-option'
+          || this.router.url == '/tabs-personal/home'
+          || this.router.url == '/tabs-personal/file'
+          || this.router.url == '/welcome'
+          || this.router.url == '/login') {
+            if (new Date().getTime() - this.lastTimeBackPress < this.timePeriodToExit) {
+              this.commonService.storageSet('isAlertShow', true);
+              this.presentAlertConfirm();
+            } else {
+              this.lastTimeBackPress = new Date().getTime();//再按
+            }
+          }
+      })
+      return;
     })
-
   }
 
   async presentAlertConfirm() {
@@ -84,23 +98,31 @@ export class AppComponent {
     this.translateService.get('common.cancel').subscribe((value) => {
       btnCancel = value;
     });
-    const alert = await this.alertController.create({
+    let alert = await this.alertController.create({
       // header: 'Confirm!',
       message: msg011,
+      backdropDismiss: false,
+      keyboardClose: false,
       buttons: [
         {
           text: btnCancel,
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
+            this.commonService.storageSet('isAlertShow', false);
           }
         }, {
           text: btnOk,
           handler: () => {
+            this.commonService.storageSet('isAlertShow', false);
+            // this.commonService.storageRemove('isLogin');
+            // this.commonService.storageRemove('facebookLogin');
+            // this.commonService.storageRemove('wechatLogin');
+            // this.commonService.storageRemove('mailLogin');
             navigator['app'].exitApp();
           }
         }
-      ]
+      ],
     });
     await alert.present();
   }

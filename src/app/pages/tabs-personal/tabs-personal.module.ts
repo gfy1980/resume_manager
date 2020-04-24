@@ -35,24 +35,24 @@ const routes: Routes = [
           }
         ]
       },
-      // {
-      //   path: 'wallet',
-      //   children: [
-      //     {
-      //       path: '',
-      //       loadChildren: '../wallet/wallet.module#WalletPageModule'
-      //     }
-      //   ]
-      // },
-      // {
-      //   path: 'settings',
-      //   children: [
-      //     {
-      //       path: '',
-      //       loadChildren: '../settings/settings.module#SettingsPageModule'
-      //     }
-      //   ]
-      // },
+      {
+        path: 'wallet',
+        children: [
+          {
+            path: '',
+            loadChildren: '../wallet/wallet.module#WalletPageModule'
+          }
+        ]
+      },
+      {
+        path: 'settings',
+        children: [
+          {
+            path: '',
+            loadChildren: '../settings/settings.module#SettingsPageModule'
+          }
+        ]
+      },
     ],
   },
   {

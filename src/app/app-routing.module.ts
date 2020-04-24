@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login-quite', pathMatch: 'full' },
+  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)},
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'login-quite', loadChildren: './pages/login-quite/login-quite.module#LoginQuitePageModule' },
@@ -25,6 +25,10 @@ const routes: Routes = [
   { path: 'file-edit', loadChildren: './pages/file-edit/file-edit.module#FileEditPageModule' },
   { path: 'affiliation', loadChildren: './pages/affiliation/affiliation.module#AffiliationPageModule' },
   { path: 'password-change-finish', loadChildren: './pages/password-change-finish/password-change-finish.module#PasswordChangeFinishPageModule' },
+  { path: 'welcome', loadChildren: './pages/welcome/welcome.module#WelcomePageModule' },
+  { path: 'company-message-detail', loadChildren: './pages/company-message-detail/company-message-detail.module#CompanyMessageDetailPageModule' },
+  { path: 'settings', loadChildren: './pages/settings/settings.module#SettingsPageModule' },
+  { path: 'wallet', loadChildren: './pages/wallet/wallet.module#WalletPageModule' },
 ];
 
 @NgModule({

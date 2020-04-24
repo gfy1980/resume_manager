@@ -41,19 +41,22 @@
         "settings": "設定/その他"
     },
     "loginQuitePage": {
+        "title": "ログイン",
         "welcome": "よこそう",
         "login": "ログイン",
+        "wechat":"Wechatに進む",
+        "facebook":"Facebookに進む",
         "other": "そのたのオプション",
         "statute": "私は<br><a href=\"http://www.newlandsystem.com\" class=\"gray-color\">サービス利用規約</a>、<a href=\"http://www.newlandsystem.com\" class=\"gray-color\">個人情報ポリシー</a><br>に同意します。"
     },
     "loginPage": {
-        "title": "",
+        "title": "ログイン",
         "placeholder": {
-            "account": "ユーザID",
+            "account": "メールアドレス",
             "password": "パスワード"
         },
         "login": "ログイン",
-        "account": "ユーザID",
+        "account": "メールアドレス",
         "password": "パスワード",
         "forget": "ID、パスワードをお忘れの場合"
     },
@@ -142,28 +145,52 @@
     },
     "homePage": {
         "title": "",
-        "scoutsList": "スカウト一覧",
-        "tipSearch": "検索"
+        "scoutsList": "受信一覧",
+        "tipSearch": "検索",
+        "dateLbl": "日付自動表示し選択",
+        "fromToLbl": "表示範囲",
+        "from": "from"
     },
     "companyInfoPage": {
-        "title": "",
+        "title": "企業メッセージ",
         "companyName": "企業名称",
-        "companyMessage": "企業メッセージ",
+        "companyMessage": "企業からのメッセージ",
         "apply": "申請中",
+        "returnLetter": "返信",
+        "returnHistory": "返信履歴",
+        "permissionSend": "許可&送信",
+        "send": "送信",
         "permission": "許可",
         "noPermission": "不許可",
-        "payment": "支払済"
+        "payment": "支払済",
+        "alertPermissionSend": "許可送信しますか？",
+        "alertSend": "送信しますか？"
     },
     "filePage": {
-        "title": "",
-        "history":"変更履歴 ",
+        "title": "Fileアップロード",
+        "history":"アップロード履歴 ",
         "upload":"アップロード",
         "edit":"編集",
         "affiliation":"所属連携",
+        "remarks":"備考",
+        "income":"希望年収",
+        "type":"希望業種",
+        "pr":"PR",
+        "keyword":"キーワード",
+        "deposit":"開示料金",
+        "eth":"ETH",
+        "save":"保存",
+        "alertSaveFinish":"保存正常（異常）に完了しました",
+        "option00":"選択しない",
+        "option01":"300万円以下",
+        "option02":"300～400万円",
+        "option03":"400～500万円",
+        "option04":"500～600万円",
+        "option05":"600万円以上",
         "sheetTitle":""
     },
     "fileEditPage": {
-        "title": "",
+        "title": "アップロード履歴",
         "project":"プロジェクト名",
         "security": "セキュリティ"
     },

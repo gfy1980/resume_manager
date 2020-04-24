@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { OtherOptionPage } from './other-option.page';
-import { TranslateModule }from "@ngx-translate/core";
+import { WalletPage } from './wallet.page';
+
 const routes: Routes = [
   {
     path: '',
-    component: OtherOptionPage
+    component: WalletPage
   }
 ];
 
@@ -19,11 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes),
-    TranslateModule
+    RouterModule.forChild(routes)
   ],
-  declarations: [OtherOptionPage]
+  declarations: [WalletPage]
 })
-export class OtherOptionPageModule {
-  
-}
+export class WalletPageModule {}

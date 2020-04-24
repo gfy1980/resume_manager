@@ -19,11 +19,16 @@ import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 import { FileChooser } from '@ionic-native/file-chooser/ngx';
+import { File } from '@ionic-native/file/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { SQLite } from "@ionic-native/sqlite/ngx";
 import { Wechat } from '@ionic-native/wechat/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { AppVersion } from '@ionic-native/app-version/ngx';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
+import { LoadingController } from '@ionic/angular';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -60,11 +65,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     SQLite,
     Camera,
     Wechat,
+    File,
     FileTransfer,
     FileOpener,
     FilePath,
     FileChooser,
     InAppBrowser,
+    AppVersion,
+    AndroidPermissions,
+    LocalNotifications,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

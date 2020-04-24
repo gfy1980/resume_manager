@@ -27,11 +27,6 @@ export class FacebookService {
 
 
   async facebookLogin() {
-    // this.facebook.login(['public_profile', 'email']).then((response) => {
-    //   console.log('Logged into Facebook!', response)
-    // }, (err) => {
-
-    // });
     let loading = await this.showLoading("");
     try {
       Facebook.login(['public_profile']).then((response) => {
@@ -50,18 +45,17 @@ export class FacebookService {
   }
 
   doFacebookLogin() {
-    // let userData = await this.facebook.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture)', []);
-    // console.log(userData); // 用户信息
-    // alert(JSON.stringify(userData));
-
     Facebook.api('/me?fields=id,name,picture', ['public_profile']).then((response) => {
       console.log(response);
-      alert(response);
-      // this.dataService.fbid = response.id;
-      // this.dataService.username = response.name;
-      // this.dataService.picture = response.picture.data.url;
+      let fbid = response.id;
+      let nickname = response.name;
+      let headimgurl = response.picture.data.url;
+      this.commonService.storageSet('fb_headimgurl', headimgurl);
+      this.commonService.storageSet('fb_nickname', nickname);
+      this.commonService.storageSet('fbid', fbid);
+      this.commonService.storageSet('facebookLogin', 1);
       // 個人スマホン画面へ
-      this.commonService.forward('/tabs-personal');
+      this.commonService.root('/login-quite');
     }, (err) => {
     });
   }

@@ -1,19 +1,65 @@
-.quick_load{
-    padding-top: 30%;
-    display: flex;
-    justify-content: center;
-    .wechat{
-        width: 24%;
-        margin: 4% 8%;
+.quite_login_row{
+    padding-top: 50%;
+}
+.wechat{
+        width: 100%;
+        margin: 4% 5%;
+        display: flex;
+        background-color: #f1f2f7;
         img{
+            width: 60px;
+            height: 60px;
+			background:rgb(51,186,43);
+        }
+        div{
             width: 100%;
+            padding-top: 1.25rem;
+            text-align: center;
         }
     }
     .facebook{
-        width: 24%;
-        margin: 4% 8%;
+        width: 100%;
+        margin: 4% 5%;
+        display: flex;
+        background-color: #f1f2f7;
         img{
+            width: 60px;
+            height: 60px;
+			background:rgb(57,90,150);
+        }
+        div{
             width: 100%;
+            padding-top: 1.25rem;
+            text-align: center;
+        }
+    }
+.fixed_foot{
+	width: 100%;
+	margin-top: 10%;
+	.other_load{
+        text-align: center;
+        width:100%;
+        button{
+            text-decoration: underline;
+            font-size: 1.0rem;
+            color:rgb(102,102,102);
+            padding: .4rem;
+            margin: 0 auto;
+            background:#fff;
+        }
+    }
+    .check{
+        width:86%;
+        margin: .8rem auto;
+        text-align: left;
+        .check_icon{
+            margin: 0 auto -26px 0px;
+        }
+        .check_font{
+            font-size: 0.875rem;
+            text-align: left;
+			text-indent: 24px;
+            line-height: 1.8rem;
         }
     }
 }

@@ -9,7 +9,7 @@ export class TabsPersonalPage implements OnInit {
   // 未読メッセージ数を表示
   public messageCount: string;
   constructor(
-    private eventService: EventService
+    private eventService: EventService,
   ) { }
 
   ngOnInit() {
@@ -21,5 +21,4 @@ export class TabsPersonalPage implements OnInit {
       }
     })
   }
-
 }

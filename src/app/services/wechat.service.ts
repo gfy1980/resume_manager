@@ -94,36 +94,62 @@ export class WechatService {
       // 先用插件获取到code
       Wechat.auth(scope, state, (response) => {
         this.commonService.storageSet("openid", JSON.stringify(response));
-        alert(JSON.stringify(response));
+        // alert(JSON.stringify(response));
         // token和openid，用户信息都是要后台去请求微信接口
         // 個人スマホン画面へ
         // this.commonService.forward('/tabs-personal');
+        let sevUrl = 'http://49.5.7.67:8880/wechat.php';
+        const body = JSON.stringify(
+          {
+            "code": response.code,
+          }
+          );
+        this.commonService.ajaxPostUrl(sevUrl,body).then((response: any) => {
+          if (response.success) {
+            let headimgurl = response.result.headimgurl;
+            let nickname = response.result.nickname;
+            let sex = response.result.sex;
+            let openid = response.result.openid;
+            let unionid = response.result.unionid;
+            this.commonService.storageSet('headimgurl', headimgurl);
+            this.commonService.storageSet('nickname', nickname);
+            this.commonService.storageSet('sex', sex);
+            this.commonService.storageSet('openid', openid);
+            this.commonService.storageSet('unionid', unionid);
+            this.commonService.storageSet('wechatLogin', 1);
+              // 個人スマホン画面へ
+            this.commonService.root('/login-quite');
+          } else {
+            alert(response.message);
+          }
+        });
         // TODO: 下記ソース部分はサーバーで作成してください。
         // 获取token，openID
-        let accessTokenUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=' + this.appId + '&secret=' + this.appSecret + '&code=' + response.code + '&grant_type=authorization_code';
-        this.commonService.ajaxGet(accessTokenUrl).then((accessTokenResponse: any) => {
-          console.log(accessTokenResponse);
-          alert(JSON.stringify(accessTokenResponse));
-          var accessToken = accessTokenResponse.access_token;
-          var openId = accessTokenResponse.openid;
-          // 获取用户信息
-          let userInfoUrl = 'https://api.weixin.qq.com/sns/userinfo?access_token=' + accessToken + '&openid=' + openId + '&lang=zh_CN';
-          this.commonService.ajaxGet(userInfoUrl).then((userInfoResponse: any) => {
-            console.log(userInfoResponse);
-            alert(JSON.stringify(userInfoResponse));
-            // openid    普通用户的标识，对当前开发者帐号唯一
-            // nickname    普通用户昵称
-            // sex    普通用户性别，1为男性，2为女性
-            // province    普通用户个人资料填写的省份
-            // city    普通用户个人资料填写的城市
-            // country    国家，如中国为CN
-            // headimgurl    用户头像，最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640*640正方形头像），用户没有头像时该项为空
-            // privilege    用户特权信息，json数组，如微信沃卡用户为（chinaunicom）
-            // unionid    用户统一标识。针对一个微信开放平台帐号下的应用，同一用户的unionid是唯一的。
-            // 個人スマホン画面へ
-            this.commonService.forward('/tabs-personal');
-          });
-        });
+        // let accessTokenUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token?appid=' + this.appId + '&secret=' + this.appSecret + '&code=' + response.code + '&grant_type=authorization_code';
+        // this.commonService.ajaxGet(accessTokenUrl).then((accessTokenResponse: any) => {
+        //   console.log(accessTokenResponse);
+        //   alert(JSON.stringify(accessTokenResponse));
+        //   var accessToken = accessTokenResponse.access_token;
+        //   var openId = accessTokenResponse.openid;
+        //   // 获取用户信息
+        //   let userInfoUrl = 'https://api.weixin.qq.com/sns/userinfo?access_token=' + accessToken + '&openid=' + openId + '&lang=zh_CN';
+        //   this.commonService.ajaxGet(userInfoUrl).then((userInfoResponse: any) => {
+        //     console.log(userInfoResponse);
+        //     alert(JSON.stringify(userInfoResponse));
+        //     // openid    普通用户的标识，对当前开发者帐号唯一
+        //     // nickname    普通用户昵称
+        //     // sex    普通用户性别，1为男性，2为女性
+        //     // province    普通用户个人资料填写的省份
+        //     // city    普通用户个人资料填写的城市
+        //     // country    国家，如中国为CN
+        //     // headimgurl    用户头像，最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640*640正方形头像），用户没有头像时该项为空
+        //     // privilege    用户特权信息，json数组，如微信沃卡用户为（chinaunicom）
+        //     // unionid    用户统一标识。针对一个微信开放平台帐号下的应用，同一用户的unionid是唯一的。
+        //     this.commonService.storageSet('wechatLogin', 1);
+        //     // 個人スマホン画面へ
+        //     this.commonService.forward('/login-quite');
+        //   });
+        // });
       }, (reason) => {
         // alert("Failed: " + reason);
       });
